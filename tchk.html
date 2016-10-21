@@ -1,16 +1,17 @@
+<!DOCTYPE html> 
 <html>
-    <head>
-        <meta charset="UTF-8"><title>tamakichecker</title>
-        <script>
-	// 読み込み
-	function tRead() {
-    	var name = localStorage.getItem('tamaki');
-    	alert(name);
+	<head>
+	<meta charset="UTF-8"><title>tamakichecker</title>
+		<script>
+		// 読み込み
+		function tRead() {
+		var name = localStorage.getItem('tamaki');
+		alert(name);
 		}
-        </script>
-     </head>
-     <body>
-     <h2>数合わせの読み取り</h2>
-	<button onclick=" tRead() ">読み込み</button></p>
-    </body>
+		</script>
+	</head>
+	<body>
+		<h2>localstorage'tamaki'の読み取り</h2>
+		<p><button onclick=" tRead() ">読み込み</button></p>
+	</body>
 </html>
