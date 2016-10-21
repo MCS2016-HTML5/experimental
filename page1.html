@@ -1,0 +1,39 @@
+<html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>canvasタグによる図形描画テスト</title>
+ <script type="text/javascript">
+ <!--
+ function sample() {
+ //描画コンテキストの取得
+ var canvas = document.getElementById('sample1');
+ if (canvas.getContext) {
+
+ var context = canvas.getContext('2d');
+
+ //左から16上から16の位置に、幅64高さ128の四角形を描く
+ context.fillRect(16,16,64,128); 
+
+ //色を指定する
+ context.strokeStyle = 'rgb(00,00,255)'; //枠線の色は青
+ context.fillStyle = 'rgb(256,00,00)'; //塗りつぶしの色は赤
+
+ //左から200上から75の位置に、幅80高さ50の四角の枠線を描く
+ context.strokeRect(200,75,80,50);
+
+ //左から140上から75の位置に、半径50の半円を反時計回り（左回り）で描く
+ context.arc(140,75,50,Math.PI*1,Math.PI*2,true);
+ context.fill();
+
+ } 
+ }
+ //-->
+ </script>
+ </head>
+ <body onLoad="sample()">
+ <h2>HTML5(JavaScript)canvasで図形を描く</h2>
+ <canvas id="sample1" style="background-color:white;">
+ 図形を表示するには、canvasタグをサポートしたブラウザが必要です。
+ </canvas>
+ </body>
+</html>
