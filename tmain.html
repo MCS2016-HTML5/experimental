@@ -1,15 +1,15 @@
 <html>
     <head>
-        <meta charset="UTF-8"><title>入れた数値によるページの推移</title>
+        <meta charset="UTF-8"><title>【中間発表】分岐部分</title>
         <script>
 	// 数値保存
-	function tSave() {
+	function sSave() {
 		var key = 'status1';
 		var val = document.getElementById("i0").value;
 	    localStorage.setItem(key, val);
 	}
 	// 数値読み込み
-	function tRead() {
+	function sRead() {
 	var name = localStorage.getItem('status1');
 	alert(name);
 	}
@@ -26,10 +26,10 @@
         </script>
      </head>
     <body>
-	<h2>数合わせ</h2>
-		<p>数字１:<input id="i0" value="7"/></p>
-		<p><button onclick="tSave();check();">進む</button></p>
-		<p><button onclick=" tRead() ">読み込み</button></p>
+	<h2>入れた値の大きさで表示が切り替わります</h2>
+		<p>ボックスA<input id="i0" value="7"/></p>
+		<p><button onclick="sSave();check();">進む</button></p>
+		<p><button onclick=" sRead() ">保存値読み込み</button></p>
 		<iframe id="f1" name="yumine" src="hoge.html" height=60% width=80%>
 		この部分は iframe 対応のブラウザで見てください。
 		</iframe>
