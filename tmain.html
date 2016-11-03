@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8"><title>入れた数値によるページの推移</title>
+        <script>
+	// 数値保存
+	function tSave() {
+		var key = 'tamaki';
+		var val = document.getElementById("i0").value;
+	    localStorage.setItem(key, val);
+	}
+	// 数値読み込み
+	function tRead() {
+	var name = localStorage.getItem('tamaki');
+	alert(name);
+	}
+	// 数値の大きさで行き先変更
+	function check() {
+		var a = document.getElementById("i0").value;
+		if (a <= 5) {
+			document.getElementById('f1').contentWindow.location.replace('page1.html');
+		}
+		else{
+			document.getElementById('f1').contentWindow.location.replace('tchk.html');
+		}
+            }
+        </script>
+     </head>
+    <body>
+	<h2>数合わせ</h2>
+		<p>数字１:<input id="i0" value="7"/></p>
+		<p><button onclick="tSave();check();">進む</button></p>
+		<p><button onclick=" tRead() ">読み込み</button></p>
+		<iframe id="f1" name="yumine" src="hoge.html" height=60% width=80%>
+		この部分は iframe 対応のブラウザで見てください。
+		</iframe>
+    </body>
+</html>
