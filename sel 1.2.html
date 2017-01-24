@@ -44,6 +44,7 @@ function check(){
 	if(flag){
 
 		window.alert('1.2.3以外が入力されています'); // 1.2.3以外の数字以外が入力された場合は警告ダイアログを表示
+		document.SelectFrom.select.value="";
 		return false; // 確定を中止
 
 	}
@@ -61,11 +62,12 @@ function check(){
 <center>
 <h1>選択肢</h1> 
 <form name="SelectFrom">
- <input type="text" name="select" onkeydown="CharCheck()" onkeyup="CharCheck()"><br>
- <input type="button" value="1" onClick="addTF(this.value);CharCheck();"><br>
- <input type="button" value="2" onClick="addTF(this.value);CharCheck();"><br>
- <input type="button" value="3" onClick="addTF(this.value);CharCheck();"><br>
- <input type="button" value="選択し直す" onClick="clr()"
+ <input type="text" name="select" onkeydown="CharCheck();check()" onkeyup="CharCheck();check();"><br>
+ <button type="button" value="1" onClick="addTF(this.value);CharCheck();"><img src="b1k.png" alt="select1" /></button><br>
+ <button type="button" value="2" onClick="addTF(this.value);CharCheck();"><img src="b2k.png" alt="select1" /></button><br>
+ <button type="button" value="3" onClick="addTF(this.value);CharCheck();"><img src="b3k.png" alt="select1" /></button><br>
+ <br>
+ <button type="button" value="選択し直す" onClick="clr()"><img src="clrk.png" alt="clear"/></button><br>
 </form>
 <p><button type="submit" onClick="check()" name="selfin" value="確定">確定</button></p>
 </center>
