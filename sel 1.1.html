@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>選択肢選択</title>
+<script type="text/javascript">
+<!--
+var charchecknum = 1;   					//許容文字数
+function CharCheck(){
+	if(document.all || document.getElementById){	
+		var str = document.SelectFrom.select.value;
+		if(str.length >= charchecknum){		//許容文字数を超えている場合
+			str = str.substring(0, charchecknum);//許容文字数にする
+			document.SelectFrom.select.value = str;	//フォーム文に許容文字数を設定
+		}
+	}
+}
+function addTF(str)
+{
+	document.SelectFrom.select.value += str;
+}
+function clr(){
+
+  document.SelectFrom.select.value="";
+
+}
+// --></script>
+</head>
+<body>
+<center>
+<h1>選択肢</h1> 
+<form name="SelectFrom">
+<input type="text" name="select" onkeydown="CharCheck()" onkeyup="CharCheck()"><br>
+<input type="button" value="1" onClick="addTF(this.value);CharCheck();"><br>
+<input type="button" value="2" onClick="addTF(this.value);CharCheck();"><br>
+<input type="button" value="3" onClick="addTF(this.value);CharCheck();"><br>
+<input type="button" value="選択し直す" onClick="clr()"
+</form>
+</center>
+</body>
+</html>
