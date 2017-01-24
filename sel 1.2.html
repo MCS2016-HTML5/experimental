@@ -45,13 +45,11 @@ function check(){
 
 		window.alert('1.2.3以外が入力されています'); // 1.2.3以外の数字以外が入力された場合は警告ダイアログを表示
 		document.SelectFrom.select.value="";
-		return false; // 確定を中止
-
-	}
+		return false; // 入力をリセット
+}
 	else{
 
-		return true; // 確定を実行
-
+		return true; // 入力を確定
 	}
 
 }
@@ -69,7 +67,7 @@ function check(){
  <br>
  <button type="button" value="選択し直す" onClick="clr()"><img src="clrk.png" alt="clear"/></button><br>
 </form>
-<p><button type="submit" onClick="check()" name="selfin" value="確定">確定</button></p>
+<p><button type="submit" onClick="" name="selfin" value="確定">確定</button></p>
 </center>
 </body>
 </html>
