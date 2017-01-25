@@ -1,0 +1,83 @@
+<!DOCTYPE HTML> 
+<html>
+<head>
+<title>選択肢</title>
+<link rel="stylesheet" type="text/css" href="select.css">
+<script type="text/javascript">
+<!--
+var charchecknum = 1;   					//許容文字数
+function CharCheck(){
+	if(document.all || document.getElementById){	
+		var str = document.SelectFrom.select.value;
+		if(str.length >= charchecknum){		//許容文字数を超えている場合
+			str = str.substring(0, charchecknum);//許容文字数にする
+			document.SelectFrom.select.value = str;	//フォーム文に許容文字数を設定
+		}
+	}
+}
+//ボタンでの入力
+function addTF(str)
+{
+	document.SelectFrom.select.value += str;
+}
+//テキストボックス内を消去する
+function clr(){
+
+  document.SelectFrom.select.value="";
+
+}
+function check(){
+
+	var flag = 0;
+
+
+	if(document.SelectFrom.select.value.match(/[^1-3]+/)){
+
+		flag = 1;
+
+	}
+	else if(document.SelectFrom.select.value.match(/[^1-3]+/)){
+
+		flag = 1;
+
+	}
+
+
+	if(flag){
+
+		window.alert('1.2.3以外が入力されています'); // 1.2.3以外の数字以外が入力された場合は警告ダイアログを表示
+		document.SelectFrom.select.value="";
+		return false; // 入力をリセット
+
+	}
+	else{
+
+		return true; // 入力を確定
+
+	}
+
+}
+	// 数値保存
+	function selsv() {
+		var s = document.getElementById("i0").value;
+	    sessionStorage.sel= s;
+	}
+
+// --></script>
+</head>
+<body>
+<center>
+<h1>選択肢</h1> 
+<form name="SelectFrom">
+ 現在選択されている番号<br>
+ <input id="i0" type="text" name="select" onkeydown="CharCheck();enter()" onkeyup="CharCheck()"><br>
+ <button type="button" value="1" onClick="addTF(this.value);CharCheck();"><img src="b1k.png" alt="1" /></button><br>
+ <button type="button" value="2" onClick="addTF(this.value);CharCheck();"><img src="b2k.png" alt="2" /></button><br>
+ <button type="button" value="3" onClick="addTF(this.value);CharCheck();"><img src="b3k.png" alt="3" /></button><br>
+ <br>
+ <button type="button" value="やり直し" onClick="clr()"><img src="meida/clrk.png" alt="clear"/></button><br>
+</form>
+<p><button type="submit" onClick="selsv();check();"  name="selfin" value="確定">確定</button></p>
+</center>
+</body>
+</html>
