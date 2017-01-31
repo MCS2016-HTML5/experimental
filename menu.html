@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="menu.css">
+<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+	<script>
+	function psave(){
+		var t = parent.text.location;
+		var m = parent.media.location;
+	localStorage.tprg= t;
+	localStorage.mprg= m;
+	alert("セーブしました");
+	}
+	function pload() {
+	var t = localStorage.tprg;
+	var m = localStorage.mprg;
+	alert("ロードしました");
+	parent.text.location.href = t;
+	parent.media.location.href= m;
+	}
+	</script>
+	<style>	
+	font-family:"Yu Gothic UI", "Meiryo UI", arial, sans-serif;
+	</style>
+</head>
+<body>
+<button type="button" class="button" onclick="psave()">セーブ</button></p>
+<button type="button" class="button" onclick="pload()">ロード</button></p>
+</body>
+</html>
